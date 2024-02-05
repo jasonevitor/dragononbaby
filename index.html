@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.ico" />
+    <link rel="stylesheet" href="/css/reset.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>TAOJIN</title>
+    <script type="module" crossorigin src="/assets/index-6eef7b74.js"></script>
+    <link rel="stylesheet" href="/assets/index-0caae046.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    
+  </body>
+</html>
+
+<script type="text/javascript">
+  //该Rem实例仅限参考
+  let fun = function (doc, win) {
+    let docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function () {
+              let clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;
+              if(clientWidth <= 375)  docEl.style.fontSize = 15 + 'px';
+              else if(clientWidth > 375 && clientWidth <= 750) docEl.style.fontSize = 15.5 + 'px';
+              else if(clientWidth > 750 && clientWidth <= 1280) docEl.style.fontSize = 16 + 'px';
+              else if(clientWidth > 1280) docEl.style.fontSize = 16.5 + 'px';
+              else if(clientWidth > 1440) docEl.style.fontSize = 17 + 'px';
+              //这里是假设在640px宽度设计稿的情况下，1rem = 20px；
+              //可以根据实际需要修改
+              // docEl.style.fontSize = 16 * (clientWidth / 750) + 'px';
+          };
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+  }
+  fun(document, window);
+</script>
